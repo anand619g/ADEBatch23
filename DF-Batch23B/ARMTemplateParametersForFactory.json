@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "DF-Batch23B"
+		},
+		"LS_ADLS_connectionString": {
+			"value": ""
+		},
+		"LS_SQL_password": {
+			"value": ""
+		},
+		"LS_SQL_PARAM_password": {
+			"value": ""
+		},
+		"LS_SQL_properties_typeProperties_server": {
+			"value": "sqlserverbatch23b.database.windows.net"
+		},
+		"LS_SQL_properties_typeProperties_database": {
+			"value": "sqldbbatch23b"
+		},
+		"LS_SQL_properties_typeProperties_userName": {
+			"value": "anand"
+		},
+		"LS_SQL_PARAM_properties_typeProperties_server": {
+			"value": "@{linkedService().ServerName}"
+		},
+		"LS_SQL_PARAM_properties_typeProperties_database": {
+			"value": "@{linkedService().dbName}"
+		},
+		"LS_SQL_PARAM_properties_typeProperties_userName": {
+			"value": "anand"
+		},
+		"TUMBLING_WINDOW_TRIGGER_properties_pipeline_parameters_WindowStartTime": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"TUMBLING_WINDOW_TRIGGER_properties_pipeline_parameters_WindowEndTime": {
+			"value": "@trigger().outputs.windowEndTime"
+		},
+		"eventbased trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/4efc3508-8c84-4a3f-8c78-58d6a0136742/resourceGroups/RG-Batch23B/providers/Microsoft.Storage/storageAccounts/adlsbatch23b"
+		}
+	}
+}
